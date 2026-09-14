@@ -1,0 +1,131 @@
+# 📡 Network Scanner
+
+A simple futuristic network monitoring and scanning tool built with Python and CustomTkinter.
+
+## 🖥️ Installation
+
+### Linux / Kali Linux
+
+1. Download the `NetworkScanner` executable.
+
+2. Open your **Downloads** folder.
+
+3. Make the file executable:
+
+```bash
+chmod +x NetworkScanner
+```
+
+4. Move it to your Desktop:
+
+```bash
+mv NetworkScanner ~/Desktop/
+```
+
+5. Run it:
+
+```bash
+~/Desktop/NetworkScanner
+```
+
+---
+
+## 🖱️ Creating a Desktop Icon
+
+If you want a clickable desktop icon instead of starting the program from the terminal:
+
+### 1. Create a desktop launcher
+
+Run:
+
+```bash
+nano ~/Desktop/NetworkScanner.desktop
+```
+
+Paste:
+
+```ini
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Network Scanner
+Comment=Network monitoring and scanning tool
+Exec=/home/YOUR-USERNAME/Desktop/NetworkScanner
+Icon=/home/YOUR-USERNAME/Desktop/logo4.png
+Terminal=false
+Categories=Network;Utility;
+```
+
+Replace `YOUR-USERNAME` with your Linux username.
+
+### 2. Make the launcher executable
+
+```bash
+chmod +x ~/Desktop/NetworkScanner.desktop
+```
+
+### 3. Trust the launcher
+
+```bash
+gio set ~/Desktop/NetworkScanner.desktop metadata::trusted true
+```
+
+Then double-click the **Network Scanner** icon on your Desktop.
+
+If your desktop asks whether you want to **Trust and Launch**, select it.
+
+---
+
+## 📦 Standalone Program
+
+You **do not need Python, CustomTkinter, or PyInstaller installed** to run the compiled `NetworkScanner` executable.
+
+Everything required by the program is packaged into the executable.
+
+---
+
+## 🔧 Features
+
+* Network monitoring
+* Network scanning
+* Graphical user interface
+* Standalone executable
+* No Python installation required
+* No terminal required when launched from the desktop
+* Futuristic network scanner interface
+
+---
+
+## ⚠️ Permissions
+
+Only scan networks and devices that you own or have permission to test.
+
+Scanning networks without authorization may violate laws, policies, or network rules.
+
+---
+
+## 👨‍💻 Developer
+
+**GEEKXLANDR**
+
+Built with:
+
+* Python
+* CustomTkinter
+* PyInstaller
+* Linux
+
+---
+
+## 📁 Files
+
+The release should contain:
+
+```text
+NetworkScanner
+README.md
+```
+
+The `NetworkScanner` file is the actual application.
+
+**You do not need to include the Python source code for someone to run the compiled application.**
