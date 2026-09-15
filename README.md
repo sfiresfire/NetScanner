@@ -1,100 +1,224 @@
-# GEEKLANDR Network Scanner
+# 📡 NetworkScanner
 
-A simple network scanning and monitoring tool built with Python, CustomTkinter, and Nmap.
+### GEEKLANDR Network Scanner
 
-The purpose of this project is to make it easy to see devices connected to a local network through a simple graphical interface.
+A lightweight network scanning tool with a futuristic graphical interface. NetworkScanner uses **Nmap** to discover devices on a local network and display information about them.
 
-## Features
+![NetworkScanner](logo4.png)
 
-* 🔍 Scan the local network for devices
-* 🌐 Display IP addresses
-* 🖥️ Display MAC addresses
-* 🏭 Display device/manufacturer information
-* 🟢 Show devices that are currently online
-* 📡 Background network scanning
-* 🟢 Green and pink cyber/futuristic interface
+---
+
+## 🚀 Download & Run
+
+If you just want to use NetworkScanner, you **do not need Python or CustomTkinter**.
+
+Download the `NetworkScanner` executable from this repository.
+
+### Linux / Kali Linux
+
+After downloading the file, open a terminal in the folder where you downloaded it and run:
+
+```bash
+chmod +x NetworkScanner
+```
+
+Then start it with:
+
+```bash
+./NetworkScanner
+```
+
+You can also move it to your Desktop:
+
+```bash
+mv NetworkScanner ~/Desktop/
+```
+
+Then run:
+
+```bash
+~/Desktop/NetworkScanner
+```
+
+---
+
+# 🖥️ Desktop Icon
+
+You can create a clickable desktop launcher so you don't have to use the terminal.
+
+Create the launcher:
+
+```bash
+nano ~/Desktop/NetworkScanner.desktop
+```
+
+Paste:
+
+```ini
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Network Scanner
+Comment=Network monitoring and scanning tool
+Exec=/home/YOUR-USERNAME/Desktop/NetworkScanner
+Icon=/home/YOUR-USERNAME/NetworkScanner/logo4.png
+Terminal=false
+Categories=Network;Utility;
+```
+
+Replace:
+
+```text
+YOUR-USERNAME
+```
+
+with your Linux username.
+
+Then save the file and run:
+
+```bash
+chmod +x ~/Desktop/NetworkScanner.desktop
+```
+
+Make the launcher trusted:
+
+```bash
+gio set ~/Desktop/NetworkScanner.desktop metadata::trusted true
+```
+
+You can then launch NetworkScanner by double-clicking the desktop icon.
+
+---
+
+# 🔍 Features
+
+* 📡 Local network discovery
+* 🔎 Nmap-powered scanning
 * 🖥️ Graphical user interface
+* 🌐 IP address information
+* 🔧 MAC address information
+* 🏭 Device/manufacturer information
+* 🟢 Futuristic green and pink interface
+* 🖥️ Standalone Linux executable
+* 🚫 No terminal required when launched from the desktop
 
-## How It Works
+---
 
-The program uses Nmap to perform a ping scan of the local network.
+# ⚙️ How It Works
 
-Example:
+NetworkScanner uses Nmap's ping scan:
 
 ```bash
 nmap -sn 192.168.0.0/24
 ```
 
-The scanner looks for devices responding on the network and displays the results in the graphical interface.
+The scan looks for devices that are active on the local network.
 
-## Requirements
+The program then displays the discovered devices through the graphical interface.
 
-If you are running the Python source code, you need:
+---
 
-* Python 3
-* Nmap
-* CustomTkinter
+# 👨‍💻 Run From Source
 
-Install CustomTkinter:
+If you want to modify the source code, you will need Python 3 and the required packages.
 
-```bash
-pip install customtkinter
-```
+## Install Nmap
 
-Install Nmap:
+On Debian/Kali-based Linux:
 
 ```bash
 sudo apt install nmap
 ```
 
-## Running the Program
+## Install CustomTkinter
+
+```bash
+pip install customtkinter
+```
+
+## Run NetworkScanner
 
 From the project directory:
 
 ```bash
-python network_monitor.py
+python network_monitor2.py
 ```
 
-## Project Structure
+---
+
+# 🛠️ Build Your Own Executable
+
+PyInstaller can be used to create the standalone executable.
+
+Install PyInstaller:
+
+```bash
+pip install pyinstaller
+```
+
+Then build:
+
+```bash
+python -m PyInstaller --clean --onefile --windowed --name NetworkScanner --icon=logo4.png network_monitor2.py
+```
+
+The finished executable will be created inside:
 
 ```text
-GEEKLANDR-NetworkScanner/
-│
-├── network_monitor.py
-├── logo4.png
-└── README.md
+dist/NetworkScanner
 ```
 
-## Future Features
+---
 
-Possible future improvements:
+# 📁 Project Structure
 
-* Device names
-* Port scanning
-* Device history
-* Network alerts
-* Export scan results
-* More detailed device information
-* Network traffic monitoring
-* Improved GUI
+```text
+NetworkScanner/
+│
+├── README.md
+├── network_monitor2.py
+├── logo4.png
+└── NetworkScanner
+```
 
-## Technology
+### Files
 
-Built using:
+**`network_monitor2.py`**
+The main Python source code.
 
-* Python
-* CustomTkinter
-* Nmap
-* Tkinter
+**`logo4.png`**
+The NetworkScanner application logo/icon.
 
-## Disclaimer
+**`NetworkScanner`**
+The compiled standalone Linux executable.
 
-This tool is intended for use on networks that you own or have permission to scan.
+**`README.md`**
+Project documentation.
 
-Do not use this software to scan networks without authorization.
+---
 
-## Author
+# 🧰 Built With
 
-**GEEKLANDR**
+* 🐍 Python
+* 🎨 CustomTkinter
+* 🔎 Nmap
+* 📦 PyInstaller
+* 🐧 Linux
 
-Network tools, Linux projects, and cybersecurity learning.
+---
+
+# 🔐 Responsible Use
+
+NetworkScanner is intended for **authorized network administration, cybersecurity education, and testing**.
+
+Only scan networks and devices that you own or have explicit permission to test.
+
+Do not use NetworkScanner to scan networks without authorization.
+
+---
+
+# 👤 GEEKLANDR
+
+Created as a Linux and cybersecurity learning project.
+
+**NetworkScanner — See what's connected to your network.**
